@@ -12,8 +12,7 @@ final class UserType
     const SUPER_ADMIN_ID = 1;
 
     const USER = '10';
-    const EVENT_ORGANIZER = '20';
-    const SUPER_ADMIN = '30';
+    const SUPER_ADMIN = '20';
 
     /**
      * Returns respective value.
@@ -30,9 +29,6 @@ final class UserType
                 $value = 'User';
                 break;
             case '20':
-                $value = 'Event Organizer';
-                break;
-            case '30':
                 $value = 'Super Admin';
                 break;
         }

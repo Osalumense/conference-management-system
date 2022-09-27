@@ -18,7 +18,7 @@ class SuperAdminAuth
     public function handle(Request $request, Closure $next)
     {
         if (!Auth::check() || Auth::id() != \UserType::SUPER_ADMIN_ID) {
-            return redirect('/auth/admin');
+            return redirect('/login');
         }
         return $next($request);
     }

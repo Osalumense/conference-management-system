@@ -23,7 +23,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('first_name', 30)->nullable()->change();
             $table->string('last_name', 30)->nullable()->after('first_name');
-            $table->enum('type', [10, 20, 30])->default(10)->after('email');
+            $table->enum('type', [10, 20])->default(10)->after('email');
             $table->enum('gender', [10, 20, 30])->default(30)->after('type');
             $table->enum('is_active', [0, 1])->default(1)->after('remember_token');
             $table->string('mobile_number', 15)->nullable()->after('is_active');

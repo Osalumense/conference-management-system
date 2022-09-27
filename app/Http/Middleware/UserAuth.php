@@ -20,14 +20,9 @@ class UserAuth
     {
         if (Auth::guest()) {
             return $next($request);
-        } 
-        if (!Auth::guest()) {
+        } else {
             /** @var User $user */
-            $user = Auth::user();
-            if ($user instanceof User && $user->type == \UserType::EVENT_ORGANIZER) {
-                return redirect()->guest('/organizer');
-            }
-            if ($user instanceof User && $user->type == \UserType::ADMIN) {
+            if ($user instanceof User && $user->type == \UserType::SUPER_ADMIN) {
                 return redirect()->guest('/admin');
             }
 
